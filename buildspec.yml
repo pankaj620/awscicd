@@ -1,10 +1,13 @@
 version: 0.2
-
+env:
+  parameter-store:
+    wiz_cred: "Credentials"
 phases:
   build:
     commands:
       - echo Entered the build phase...
-      - echo Build started on `date`
+      - echo "Wiz credentials $wiz_cred"
+
 artifacts:
   files:
     - '**/*'
