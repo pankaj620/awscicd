@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    var:"Testing"
+    var:Testing
   parameter-store:
     wiz_cred: "Credentials"
 phases:
