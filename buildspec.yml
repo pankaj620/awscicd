@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    var:Testing-wiz
+    var: Testing-wiz
     
   parameter-store:
     wiz_cred: "Credentials"
