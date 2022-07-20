@@ -8,9 +8,11 @@ env:
 phases:
   build:
     commands:
+      - secret=${wiz_cred}
       - echo Entered the build phase...
       - echo "Wiz credentials ${wiz_cred}"
       - echo value of var is $var
+      - echo Value of parameter store is $secret
       - echo done
 
 artifacts:
