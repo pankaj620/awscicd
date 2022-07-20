@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo "Getting paramtere store value.."
-      - SECRET=$(wiz_cred)
+      - SECRET=${wiz_cred}
       - echo The value of parameter store is $SECRET
   build:
     commands:
