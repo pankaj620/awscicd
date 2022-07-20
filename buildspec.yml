@@ -8,9 +8,10 @@ env:
 phases:
   pre_build:
     commands:
-      - echo "Getting paramtere store value.."
-      - SECRET=${wiz_cred}
-      - echo The value of parameter store is $SECRET
+      - echo Installing wizcli
+      - curl -o wizcli https://wizcli.app.wiz.io/wizcli
+      - chmod +x wizcli
+      - ls -l wizcli
   build:
     commands:
       - echo Entered the build phase...
