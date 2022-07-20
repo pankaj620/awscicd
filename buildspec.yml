@@ -1,5 +1,7 @@
 version: 0.2
 env:
+  variables:
+    var:"Testing"
   parameter-store:
     wiz_cred: "Credentials"
 phases:
@@ -7,6 +9,8 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo "Wiz credentials ${wiz_cred}"
+      - echo value of var is $var
+      - echo done
 
 artifacts:
   files:
