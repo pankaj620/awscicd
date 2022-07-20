@@ -6,13 +6,16 @@ env:
   parameter-store:
     wiz_cred: "Credentials"
 phases:
+  pre_build:
+    commands:
+      - echo "Getting paramtere store value.."
+      - SECRET=$(wiz_cred)
+      - echo The value of parameter store is $SECRET
   build:
     commands:
-      - secret=${wiz_cred}
       - echo Entered the build phase...
       - echo "Wiz credentials ${wiz_cred}"
       - echo value of var is $var
-      - echo Value of parameter store is $secret
       - echo done
 
 artifacts:
