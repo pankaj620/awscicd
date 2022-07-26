@@ -1,28 +1,20 @@
 version: 0.2
 env:
-  variables:
-    var: Testing-wiz
   parameter-store:
-    ID: "Credentials"
-    SECRET: "fortesting"
+    ID: "client_id"
+    SECRET: "client_secret"
 phases:
   pre_build:
     commands:
       - echo Installing wizcli
-      - curl -o compliancecli https://wizcli.app.wiz.io/wizcli
+      - curl -o wizcli https://wizcli.app.wiz.io/wizcli
       - file wizcli
       - uname -a
-      - chmod +x compliancecli
-      - ls -l compliancecli
+      - chmod +x wizcli
+      - ls -l wizcli
       - echo $PWD
   build:
     commands:
       - echo Entered the build phase...
-      - ./compliancecli auth --id $ID --secret $SECRET
-      - echo value of var is $var
+      - ./wizcli auth --id $ID --secret $SECRET
       - echo done
-   
-
-artifacts:
-  files:
-    - '**/*'
