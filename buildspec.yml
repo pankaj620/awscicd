@@ -10,6 +10,8 @@ phases:
     commands:
       - echo Installing wizcli
       - curl -o compliancecli https://wizcli.app.wiz.io/wizcli
+      - file wizcli
+      - uname -a
       - chmod +x compliancecli
       - ls -l compliancecli
       - echo $PWD
