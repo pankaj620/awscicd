@@ -10,13 +10,14 @@ phases:
   pre_build:
     commands:
       - echo Installing wizcli
-      - curl -o wizcli https://wizcli.app.wiz.io/wizcli
-      - chmod +x wizcli
-      - ls -l wizcli
+      - curl -o compliancecli https://wizcli.app.wiz.io/wizcli
+      - chmod +x compliancecli
+      - ls -l compliancecli
+      - echo $PWD
   build:
     commands:
       - echo Entered the build phase...
-      - ./wizcli auth --id $ID --secret $SECRET
+      - ./compliancecli auth --id $ID --secret $SECRET
       - echo value of var is $var
       - echo done
    
