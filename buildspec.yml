@@ -4,7 +4,8 @@ env:
     var: Testing-wiz
     
   parameter-store:
-    wiz_cred: "Credentials"
+    ID: "Credentials"
+    SECRET: "fortesting"
 phases:
   pre_build:
     commands:
@@ -15,9 +16,10 @@ phases:
   build:
     commands:
       - echo Entered the build phase...
-      - echo "Wiz credentials ${wiz_cred}"
+      - wizcli auth --id $ID --secret $SECRET
       - echo value of var is $var
       - echo done
+   
 
 artifacts:
   files:
