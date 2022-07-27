@@ -17,4 +17,5 @@ phases:
     commands:
       - echo Entered the build phase...
       - ./wizcli auth --id $ID --secret $SECRET
+      - ./wizcli iac scan --path s3.json
       - echo done
