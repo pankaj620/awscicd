@@ -13,9 +13,14 @@ phases:
       - chmod +x wizcli
       - ls -l wizcli
       - echo $PWD
-  build:
-    commands:
-      - echo Entered the build phase...
-      - ./wizcli auth --id $ID --secret $SECRET
-      - ./wizcli iac scan --path s3.json
-      - echo $?
+  build:{
+      "commands": [
+        "echo Entered the build phase...",
+        "./wizcli auth --id $ID --secret $SECRET",
+        "set +e; ./wizcli iac scan --path s3.json; exit_status=$?",
+        "echo Done",
+        "echo $exit_status",
+        "exit $exit_status"
+
+      ]
+    }
